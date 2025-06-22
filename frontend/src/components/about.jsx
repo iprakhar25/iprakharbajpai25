@@ -20,7 +20,7 @@ const About = () => {
     return (
         <section id="aboutme" className="section">
             <h2>
-                <span id="begg">Hi, i'm&nbsp;</span>
+                <span id="begg">hi, i'm&nbsp;</span>
                 <span id="about-name"><strong>{typedName}</strong></span>
                 <span className="cursor">_</span> {/* Blinking Cursor Effect */}
             </h2>
