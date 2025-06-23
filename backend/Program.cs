@@ -6,18 +6,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins("https://iprakhar25.github.io")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
 });
 builder.Services.AddSingleton<GitHubService>();
-
+builder.Services.AddEndpointsApiExplorer();
 var app = builder.Build();
 
-app.UseCors("AllowAll");
+app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
